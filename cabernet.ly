@@ -10,7 +10,6 @@
 
 \include "english.ly"
 
-
 staffMelody = \new Staff {
 	\time 3/4
 	\set Staff.instrumentName = "Melody"
@@ -18,7 +17,7 @@ staffMelody = \new Staff {
 	\key e \minor
 	\clef treble
 	\relative b { 	
-	  \partial 2 r8 b e fs \bar "||"
+	  \partial 2 r8 b e fs |
 	  g4 r8 b, e fs | g4 r8 b, e fs |
 	  g='4 b4. a8 | g4 fs e |
 	  fs='4 r8 a, d e | fs4 r8 a, d e |
@@ -42,7 +41,17 @@ staffMelody = \new Staff {
 
 }
 
+chordExceptions = {
+  <c ef gf bf>1 - \markup { "m7(" \small { \raise #0.5 \flat } "5)" }
+}
+
 harmonies = \new ChordNames \chordmode {
+  \override ChordNames.ChordName #'font-family = #'roman
+  \set chordNameExceptions = #(
+    append
+      (sequential-music-to-chord-exceptions chordExceptions #t)
+      ignatzekExceptions
+  )
 	s2 |
 	e2.*3:m | c2. | d2.*3 | b2.:m |
 	c2.*2 | g |
