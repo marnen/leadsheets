@@ -10,6 +10,7 @@
 
 \include "english.ly"
 
+
 staffMelody = \new Staff {
 	\time 3/4
 	\set Staff.instrumentName = "Melody"
@@ -62,15 +63,19 @@ harmonies = \new ChordNames \chordmode {
 }
 
 \score {
-	<<
-		\harmonies
-		\staffMelody
-	>>
+  <<
+    \harmonies
+    \staffMelody
+  >>
 	
 	\midi {
 	}
 
   \layout {
+    \context {
+      \Staff
+      \remove "Instrument_name_engraver"
+    }
   }
 }
 
