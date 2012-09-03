@@ -3,7 +3,7 @@
 
 \header {
 	title = "Cabernet" 
- 	composer = "Marnen E. Laibow-Koser" 
+ 	composer = \markup { \right-column { "Marnen E. Laibow-Koser" "31 August 2012" } }
  	copyright = "Copyright © 2012 Marnen E. Laibow-Koser. All rights reserved." 
 
 }
@@ -35,7 +35,7 @@ staffMelody = \new Staff {
       b='4 a r8 d | d, e fs g a b |
       a='4 g r8 c | c, d e fs g a |
       g='4 fs a | a, f' e |
-      d='4 r8 b g' fs |
+      b'='4 r8 b, g' fs |
     } \alternative { { e=' g a b c d | } { e,='4 } }
     \bar "|."
 	}
@@ -43,6 +43,13 @@ staffMelody = \new Staff {
 }
 
 harmonies = \new ChordNames \chordmode {
+	s2 |
+	e2.*3:m | c2. | d2.*3 | b2.:m |
+	c2.*2 | g |
+	a:m | fs2.:m7.5- | b2 g4 |
+	c2.*3 | b:m | e2.*2 |
+	a2.:m | d | g | c |
+	fs:m7.5- | f/a | b | e2:m g4 | e4:m 
 }
 
 \score {
